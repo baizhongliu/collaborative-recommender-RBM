@@ -54,14 +54,6 @@ def RBM_symm(u_rbm_best,i_rbm_best,train_tensor_u,train_tensor_i,training_set,te
     print(mae_symm_train,mse_symm_train,mae_symm_test,mse_symm_test)
     
     
-    #####条件RBM进行symm RBM的输出 --> DataFrame
-    l_recons_ui = output_ui.numpy().flatten().tolist()
-    l_recons_iu = output_iu.t().numpy().flatten().tolist()
-    data_symm={'x_ui':l_recons_ui,'x_iu':l_recons_iu}
-    data_symm = pd.DataFrame(data_symm)
-    yhat_symm = lr_ridge.predict(X=data_symm[['x_ui','x_iu']])
-    
-    
     
             
             
